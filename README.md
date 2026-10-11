@@ -13,23 +13,24 @@ streamlit run app.py
 
 Optional: `.env.example` als `.env` kopieren und einen eigenen `OPENAI_API_KEY` setzen. Niemals Schlüssel einchecken oder veröffentlichen.
 
-Für Windows PowerShell statt der Zeile \`source ...\` verwenden:
+Für Windows PowerShell statt der Zeile `source ...` verwenden:
 
 ~~~powershell
-.\\.venv\\Scripts\\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ~~~
 
 ## Agent-Skills
 
-- Das mitgelieferte \`AGENTS.md\` legt projektweite Coding-Regeln fest.
-- Der eigene Skill \`.agents/skills/offer-quality-gate/SKILL.md\` definiert die Tests für Angebote.
-- **Optional, separat installieren:** Superpowers (Grok Build CLI: \`grok plugin install superpowers@xai-official --trust\`; Claude Code: \`/plugin install superpowers@claude-plugins-official\`).
-- UI/UX Pro Max nur bei Designarbeiten ergänzen (\`npx ui-ux-pro-max-cli init --ai universal\`).
+- Das mitgelieferte `AGENTS.md` legt projektweite Coding-Regeln fest.
+- Der eigene Skill `.agents/skills/offer-quality-gate/SKILL.md` definiert die Tests für Angebote.
+- **Optional, separat installieren:** Superpowers (Grok Build CLI: `grok plugin install superpowers@xai-official --trust`; Claude Code: `/plugin install superpowers@claude-plugins-official`).
+- UI/UX Pro Max nur bei Designarbeiten ergänzen (`npx ui-ux-pro-max-cli init --ai universal`).
 - Externe Skills sind **nicht** durch diese Dateien automatisch installiert. Nur aus vertrauenswürdigen Quellen und nach Prüfung der Berechtigungen installieren.
 
 ## Testen
 
 ```bash
+pip install -r requirements-dev.txt
 python -m unittest discover -s tests -v
 python -m compileall -q app.py offer_engine.py
 ```
