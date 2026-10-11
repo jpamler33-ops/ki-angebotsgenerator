@@ -6,12 +6,26 @@ Ein kostenlos lokal startbarer, deutschsprachiger Angebotsgenerator mit exakter 
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
 Optional: `.env.example` als `.env` kopieren und einen eigenen `OPENAI_API_KEY` setzen. Niemals Schlüssel einchecken oder veröffentlichen.
+
+Für Windows PowerShell statt der Zeile \`source ...\` verwenden:
+
+~~~powershell
+.\\.venv\\Scripts\\Activate.ps1
+~~~
+
+## Agent-Skills
+
+- Das mitgelieferte \`AGENTS.md\` legt projektweite Coding-Regeln fest.
+- Der eigene Skill \`.agents/skills/offer-quality-gate/SKILL.md\` definiert die Tests für Angebote.
+- **Optional, separat installieren:** Superpowers (Grok Build CLI: \`grok plugin install superpowers@xai-official --trust\`; Claude Code: \`/plugin install superpowers@claude-plugins-official\`).
+- UI/UX Pro Max nur bei Designarbeiten ergänzen (\`npx ui-ux-pro-max-cli init --ai universal\`).
+- Externe Skills sind **nicht** durch diese Dateien automatisch installiert. Nur aus vertrauenswürdigen Quellen und nach Prüfung der Berechtigungen installieren.
 
 ## Testen
 
